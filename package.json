@@ -1,0 +1,46 @@
+{
+  "name": "@mgsisk/postcss-modular-rhythm",
+  "version": "0.0.0",
+  "description": "PostCSS plugin that adds modular scale and vertical rhythm units to CSS.",
+  "main": "src/index.js",
+  "scripts": {
+    "clean": "find . -name '*.DS_Store' -type f -delete",
+    "preversion": "npm test",
+    "postversion": "git push --follow-tags && npm publish",
+    "fix": "npm run fix.js",
+    "fix.js": "eslint --fix '.*.js' 'src/**/*.js' 'tests/**/*.js'",
+    "test": "npm run test.js && tap tests --coverage-report=lcovonly",
+    "test.js": "eslint '.*.js' 'src/**/*.js' 'tests/**/*.js'",
+    "test.json": "find . -name '*.json' ! -path '*/node_modules/*' | xargs -L1 jsonlint -q",
+    "test.md": "markdownlint ./**/*.md -i node_modules/ code_of_conduct.md license.md",
+    "test.write": "find . -name '*.md' ! -path '*/node_modules/*' ! -name 'license.md' ! -name 'code_of_conduct.md' | xargs -L1 write-good",
+    "test.yml": "find . -name '*.yml' ! -path '*/node_modules/*' | xargs -L1 js-yaml"
+  },
+  "repository": "github:mgsisk/postcss-modular-rhythm",
+  "keywords": [
+    "css",
+    "postcss",
+    "postcss-plugin",
+    "modular-scale",
+    "vertical-rhythm"
+  ],
+  "author": "mgsisk <me@mgsisk.com> (https://mgsisk.com)",
+  "license": "ISC",
+  "bugs": {
+    "email": "help@mgsisk.com",
+    "url": "https://github.com/mgsisk/postcss-modular-rhythm/issues"
+  },
+  "homepage": "https://github.com/mgsisk/postcss-modular-rhythm#readme",
+  "dependencies": {
+    "postcss": "^7.0.6"
+  },
+  "devDependencies": {
+    "@mgsisk/eslint-config": "^0.5.0",
+    "eslint": "^5.9.0",
+    "js-yaml": "^3.12.0",
+    "jsonlint": "^1.6.3",
+    "markdownlint-cli": "^0.13.0",
+    "tap": "^12.1.0",
+    "write-good": "^0.13.1"
+  }
+}
