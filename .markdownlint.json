@@ -1,0 +1,14 @@
+{
+  "default": true,
+  "first-heading-h1": false,
+  "line-length": {
+    "code_blocks": false,
+    "tables": false
+  },
+  "blanks-around-headings": false,
+  "no-duplicate-heading": {
+    "siblings_only": true
+  },
+  "blanks-around-lists": false,
+  "first-line-h1": false
+}
