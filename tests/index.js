@@ -4,17 +4,6 @@ const plugin = require('../src/index.js') // eslint-disable-line import/no-inter
 const postcss = require('postcss')
 
 postcss([plugin])
-  .process(`
-
-  small {
-    font: -1mfs/-1mlh serif;
-  }`, {from: undefined})
-  .then((result)=> {
-    console.log(`\n\n${result.css}\n\n`)
-    tap.match(result.css, /9px - 2\.48832/u, 'It scales values up')
-  })
-
-postcss([plugin])
   .process('a{width:calc(9px - 5msu)}', {from: undefined})
   .then((result)=> {
     tap.match(result.css, /9px - 2\.48832/u, 'It scales values up')
