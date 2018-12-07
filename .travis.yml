@@ -13,6 +13,13 @@ matrix:
 
 install:
   - npm install
+  - mkdir tmp
+  - export PATH=$PATH:$(pwd)/tmp
+
+before_script:
+  - wget -O tmp/cc-test-reporter https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  - chmod +x tmp/cc-test-reporter
+  - cc-test-reporter before-build
 
 after_script:
   - cc-test-reporter after-build -t lcov --exit-code $TRAVIS_TEST_RESULT
