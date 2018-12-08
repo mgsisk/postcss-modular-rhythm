@@ -1,7 +1,7 @@
 /* eslint-disable no-undefined */
 const tap = require('tap')
-const plugin = require('../src/index.js') // eslint-disable-line import/no-internal-modules
 const postcss = require('postcss')
+const plugin = require('../src')
 
 postcss([plugin])
   .process('a{width:calc(9px - 5msu)}', {from: undefined})
