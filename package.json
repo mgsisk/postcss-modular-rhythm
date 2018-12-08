@@ -5,15 +5,14 @@
   "main": "src/index.js",
   "scripts": {
     "clean": "find . -name '*.DS_Store' -type f -delete",
+    "lint": "npm run lint.js",
+    "lint.js": "eslint '.*.js' 'src/**/*.js' 'tests/**/*.js'",
+    "lint.json": "find . -name '*.json' ! -path '*/node_modules/*' | xargs -L1 jsonlint -q",
     "lint.md": "remark .",
+    "lint.yml": "find . -name '*.yml' ! -path '*/node_modules/*' | xargs -L1 js-yaml",
     "preversion": "npm test",
     "postversion": "git push --follow-tags && npm publish",
-    "fix": "npm run fix.js",
-    "fix.js": "eslint --fix '.*.js' 'src/**/*.js' 'tests/**/*.js'",
-    "test": "npm run test.js && tap tests --coverage-report=lcovonly",
-    "test.js": "eslint '.*.js' 'src/**/*.js' 'tests/**/*.js'",
-    "test.json": "find . -name '*.json' ! -path '*/node_modules/*' | xargs -L1 jsonlint -q",
-    "test.yml": "find . -name '*.yml' ! -path '*/node_modules/*' | xargs -L1 js-yaml"
+    "test": "npm run lint.js && tap tests --coverage-report=lcovonly"
   },
   "repository": "github:mgsisk/postcss-modular-rhythm",
   "keywords": [
