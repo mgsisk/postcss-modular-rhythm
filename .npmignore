@@ -2,8 +2,8 @@
 .editorconfig
 .eslintrc.js
 .markdownlint.json
-.nyc_output
 .travis.yml
+/.nyc_output/
 /coverage/
 /tests/
 Brewfile
