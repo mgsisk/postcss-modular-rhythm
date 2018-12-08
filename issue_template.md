@@ -23,7 +23,7 @@
      the bug in -->
 <!-- For enhancements, delete this section -->
 
-- @mgsisk/postcss-modular-rhythm <!-- The version of @mgsisk/postcss-modular-rhythm you're using -->
-- PostCSS <!-- The version of PostCSS you're using -->
-- NPM <!-- The version of NPM you're using -->
-- Node <!-- The version of Node you're using -->
+- @mgsisk/postcss-modular-rhythm <!-- version(s) -->
+- PostCSS <!-- version(s) -->
+- NPM <!-- version(s) -->
+- Node <!-- version(s) -->

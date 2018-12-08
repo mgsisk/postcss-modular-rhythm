@@ -15,9 +15,9 @@ contributions are always welcome! These guidelines should help get you started.
 ## Development Tools
 
 The @mgsisk/postcss-modular-rhythm package uses a variety of open source
-software to manage development; you'll want to at least install [Git] and
-[Node]. If you're working on a Mac you can install the suggested software using
-[Homebrew Bundle].
+software to manage development; you'll want to at least install [Git][] and
+[Node][]. If you're working on a Mac you can install the suggested software
+using [Homebrew Bundle][].
 
 You can install the development dependencies with:
 
@@ -25,8 +25,8 @@ You can install the development dependencies with:
 npm install
 ```
 
-A set of automation tasks is available through [npm] to help with running tests.
-You can see a list of available tasks with:
+A set of automation tasks is available through [npm][] to help with running
+tests. You can see a list of available tasks with:
 
 ```sh
 npm run

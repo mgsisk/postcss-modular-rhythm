@@ -8,7 +8,7 @@
 
 > PostCSS plugin that adds modular scale and vertical rhythm units to CSS.
 
-The @mgsisk/postcss-modular-rhythm package is a [PostCSS] plugin that adds
+The @mgsisk/postcss-modular-rhythm package is a [PostCSS][] plugin that adds
 modular scale and vertical rhythm units to CSS.
 
 - `msu` – Modular Scale Unit, converted to a unitless value using the scale
@@ -19,7 +19,7 @@ modular scale and vertical rhythm units to CSS.
 - `mfs` – Modular Font Size, converted to a scaled value appropriate for `font`
   or `font-size` using the base font size, scale step, ratio, and bases.
 - `vru` – Vertical Rhythm Unit, converted to a multiple of the base line height,
-  appropriate for use with a variety of sizing properties ( `height`, `margin`,
+  appropriate for use with a variety of sizing properties (`height`, `margin`,
   `padding`, etc.)
 
 [PostCSS]: https://postcss.org/
@@ -80,12 +80,12 @@ small {
 }
 ```
 
-To maintain vertical rhythm, elements should have the same `mfs` and `mlh` values (i.e.
-an `h2` with `font-size: 4mfs;` should have `line-height: 4mlh;`).
+To maintain vertical rhythm, elements should have the same `mfs` and `mlh`
+values (i.e. an `h2` with `font-size: 4mfs;` should have `line-height: 4mlh;`).
 
 ### Options
 
-### `--font-size`
+#### `--font-size`
 
 Sets the base font size and unit used for `mfs` values. Mapped to the `fontSize`
 and `fontUnit` properties in the JavaScript API.
@@ -96,7 +96,7 @@ and `fontUnit` properties in the JavaScript API.
 }
 ```
 
-### `--line-height`
+#### `--line-height`
 
 Sets the base line height and vertical rhythm unit for `mlh` and `vru` values.
 Mapped to the `lineHeight` and `rhythmUnit` properties in the JavaScript API.
@@ -107,7 +107,7 @@ Mapped to the `lineHeight` and `rhythmUnit` properties in the JavaScript API.
 }
 ```
 
-### `--modular-scale`
+#### `--modular-scale`
 
 Sets the ratio and bases used to calculate `mfs`, `mlh`, and `msu` values. The
 first number sets the scale ratio; following numbers set optional bases. The
@@ -122,7 +122,7 @@ and `bases` properties in the JavaScript API.
 
 [default-scale]: https://modularscale.com/?1&em&1.2
 
-### `round`
+#### `round`
 
 You can set the number of decimal places values are rounded to in the JavaScript
 API using the `round` option.
@@ -141,13 +141,13 @@ module.exports = {
 
 ## Support
 
-[Support] resources are available.
+[Support][] resources are available.
 
 [support]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/support.md
 
 ## Contribute
 
-[Contributions] are always welcome.
+[Contributions][] are always welcome.
 
 [Contributions]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/contributing.md
 
