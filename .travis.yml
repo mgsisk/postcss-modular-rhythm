@@ -1,8 +1,8 @@
 language: node_js
 
 node_js:
-  - 'node'
-  - 'lts/*'
+  - lts/*
+  - node
 
 env:
   global:
@@ -23,3 +23,12 @@ before_script:
 
 after_script:
   - cc-test-reporter after-build -t lcov --exit-code $TRAVIS_TEST_RESULT
+
+deploy:
+  provider: npm
+  email: me@mgsisk.com
+  api_key:
+    secure: O8bK9Po9UjKxgoswmaN45ztOZznpK/FO3c3mNycPceSyqOesfL75roHTp87dheKWhTGogppP6P/SI0oMOJc+Z+NErQU9AxFQsRkbKH8mKuRhAEi9LdoA9FWE1/GVZqStQesDkohlFUC+nZCS+rOaCDMXi6xWpH0zSmGfGgu01k2qng/1rL61YzJiPydlUYHzOLQNdIOxGqm/eUJuCeioxFyJ9APR/8bPGjPTFSmk1xg8jpkLuwwf7OXcDG40foQVLoae+4pxQnAPqz4wrBZz3PK3+rIEmKB33nuBg/Lml6Dxdw26/FUuplQSVOLZi37X0b6Xf2hVoMvYLM1YPzFY27Y57ez4Yb122+3OKLgPVaMaika6zZkJUoyUiS6ACbCi9G+wysDn83dj0fCdrqi554skac5YFis3F3xP12LIVkgg8IS5q4PvFxeSWo5xjh2kq7HklBIbsOoQCquu+VzY9K/aNcPo+FMavm9qbqaz5FPvxkDOMxN4vQIw4kf4h5+HpSMDQhQCtQ1QSoWHgO4mVRxf65BxABpIRIA+R0/L89FbSNNGzrCIUbSWMyF2/KoaIhYHYsY1BBJ8jEjfkrgWFJsaD6TF7TIBfQdmQmP9itsQIR3g1wjf1K/2SVPDOViQ004bE9zRLmTLo4VOi3+rezSCYjwV2FpobeM8B4EL+v4=
+  on:
+    repo: mgsisk/postcss-modular-rhythm
+    tags: true

@@ -11,7 +11,7 @@
     "lint.md": "remark .",
     "lint.yml": "find . -name '*.yml' ! -path '*/node_modules/*' | xargs -L1 js-yaml",
     "preversion": "npm test",
-    "postversion": "git push --follow-tags && npm publish",
+    "postversion": "git push --follow-tags",
     "test": "npm run lint.js && tap tests --coverage-report=lcovonly"
   },
   "repository": "github:mgsisk/postcss-modular-rhythm",
