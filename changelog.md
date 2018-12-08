@@ -1,6 +1,13 @@
 # Changelog
 
-## [0.1.0][] (2018-12-07)
+## [0.1.1][] (2018-12-07)
+
+### Changed
+- Moved npm deployment to Travis configuration
+- Package script names
+- Replaced `markdownlint-cli` with `remark-lint`
+
+## [0.1.0][] (2018-12-06)
 
 > Initial public release.
 
@@ -10,4 +17,5 @@
 - `msu` unit support
 - `vru` unit support
 
+[0.1.1]: https://github.com/mgsisk/eslint-config/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/mgsisk/postcss-modular-rhythm/tree/v0.1.0
