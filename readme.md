@@ -3,7 +3,7 @@
 [![Version 0.1.0][img-version]][url-version]
 [![Build status][img-build]][url-build]
 [![Maintainability grade][img-maintainability]][url-maintainability]
-[![Coverage grade][img-coverage]][url-coverage]
+[![Test coverage][img-coverage]][url-coverage]
 [![Support development][img-support]][url-support]
 
 > PostCSS plugin that adds modular scale and vertical rhythm units to CSS.
