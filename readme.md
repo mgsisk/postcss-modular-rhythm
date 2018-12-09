@@ -14,10 +14,10 @@ modular scale and vertical rhythm units to CSS.
 - `msu` – Modular Scale Unit, converted to a unitless value using the scale
   step, ratio, and bases.
 - `mlh` – Modular Line Height, converted to a unitless value appropriate for
-  `line-height` that will maintain vertical rhythm using the base line height,
-  scale step, ratio, and bases.
+  `line-height` that will maintain vertical rhythm using the base line height
+  and scale step, ratio, and bases.
 - `mfs` – Modular Font Size, converted to a scaled value appropriate for `font`
-  or `font-size` using the base font size, scale step, ratio, and bases.
+  or `font-size` using the base font size and scale step, ratio, and bases.
 - `vru` – Vertical Rhythm Unit, converted to a multiple of the base line height,
   appropriate for use with a variety of sizing properties (`height`, `margin`,
   `padding`, etc.)
@@ -80,14 +80,15 @@ small {
 }
 ```
 
-To maintain vertical rhythm, elements should have the same `mfs` and `mlh`
-values (i.e. an `h2` with `font-size: 4mfs;` should have `line-height: 4mlh;`).
+> To maintain vertical rhythm, elements should have the same `mfs` and `mlh`
+> values (i.e. an `h2` with `font-size: 4mfs;` should have
+> `line-height: 4mlh;`).
 
 ### Options
 
 #### `--font-size`
 
-Sets the base font size and unit used for `mfs` values. Mapped to the `fontSize`
+Set the base font size and unit used for `mfs` values. Mapped to the `fontSize`
 and `fontUnit` properties in the JavaScript API.
 
 ```css
@@ -98,7 +99,7 @@ and `fontUnit` properties in the JavaScript API.
 
 #### `--line-height`
 
-Sets the base line height and vertical rhythm unit for `mlh` and `vru` values.
+Set the base line height and vertical rhythm unit for `mlh` and `vru` values.
 Mapped to the `lineHeight` and `rhythmUnit` properties in the JavaScript API.
 
 ```css
@@ -109,10 +110,12 @@ Mapped to the `lineHeight` and `rhythmUnit` properties in the JavaScript API.
 
 #### `--modular-scale`
 
-Sets the ratio and bases used to calculate `mfs`, `mlh`, and `msu` values. The
-first number sets the scale ratio; following numbers set optional bases. The
-default scale [looks something like this][default-scale]. Mapped to the `ratio`
-and `bases` properties in the JavaScript API.
+Set the ratio and bases used to calculate `mfs`, `mlh`, and `msu` values. The
+first number sets the scale ratio; following numbers set optional bases. Use
+`msu` values to get the scale value for a given step in the defined scale. For
+example, on the default scale – which [looks something like this][default-scale]
+– `2msu` would produce a value of `1.44`. Mapped to the `ratio` and `bases`
+properties in the JavaScript API.
 
 ```css
 :root {
