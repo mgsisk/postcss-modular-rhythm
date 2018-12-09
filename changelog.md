@@ -3,15 +3,15 @@
 ## [0.1.2][] (2018-12-09)
 
 ### Changed
-- Replaced jsonlint with jsonlint-cli
-- Replaced js-yaml with yaml-lint
+- Replaced `js-yaml` with `yaml-lint`
+- Replaced `jsonlint` with `jsonlint-cli`
 
 ## [0.1.1][] (2018-12-07)
 
 ### Changed
 - Moved npm deployment to Travis configuration
 - Package script names
-- Replaced `markdownlint-cli` with `remark-lint`
+- Replaced `markdownlint-cli` with `remark-cli`
 
 ## [0.1.0][] (2018-12-06)
 
