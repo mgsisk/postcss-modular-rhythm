@@ -5,11 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "clean": "find . -name '*.DS_Store' -type f -delete",
-    "lint": "npm run lint.js",
-    "lint.js": "eslint '.*.js' 'src/**/*.js' 'tests/**/*.js'",
-    "lint.json": "find . -name '*.json' ! -path '*/node_modules/*' | xargs -L1 jsonlint -q",
+    "lint.js": "eslint '**/*.js' '**/.*.js'",
+    "lint.json": "jsonlint-cli '**/*.json' '**/.*.json'",
     "lint.md": "remark .",
-    "lint.yml": "find . -name '*.yml' ! -path '*/node_modules/*' | xargs -L1 js-yaml",
+    "lint.yml": "yamllint '**/*.yml' '**/.*.yml'",
     "preversion": "npm test",
     "postversion": "git push --follow-tags",
     "test": "npm run lint.js && tap tests --coverage-report=lcovonly"
@@ -28,7 +27,7 @@
     "email": "help@mgsisk.com",
     "url": "https://github.com/mgsisk/postcss-modular-rhythm/issues"
   },
-  "homepage": "https://github.com/mgsisk/postcss-modular-rhythm#readme",
+  "homepage": "https://github.com/mgsisk/postcss-modular-rhythm",
   "dependencies": {
     "postcss": "^7.0.6"
   },
@@ -36,9 +35,9 @@
     "@mgsisk/eslint-config": "^0.5.0",
     "@mgsisk/remark-lint-config": "^0.1.0",
     "eslint": "^5.9.0",
-    "js-yaml": "^3.12.0",
-    "jsonlint": "^1.6.3",
+    "jsonlint-cli": "^1.0.1",
     "remark-cli": "^6.0.1",
-    "tap": "^12.1.0"
+    "tap": "^12.1.0",
+    "yaml-lint": "^1.2.4"
   }
 }
