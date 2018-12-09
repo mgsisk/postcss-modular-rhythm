@@ -8,9 +8,6 @@ env:
   global:
     - CC_TEST_REPORTER_ID=932e9b5ed0961d7e554f5e1e82300779d1f4b42b1718ace27c71516d7aaaf52f
 
-matrix:
-  fast_finish: true
-
 install:
   - npm install
   - mkdir tmp
