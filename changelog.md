@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.2.0][] (2018-12-10)
+
+### Fixed
+- Plugin name
+
 ## [0.1.2][] (2018-12-09)
 
 ### Changed
@@ -23,6 +28,7 @@
 - `msu` unit support
 - `vru` unit support
 
+[0.2.0]: https://github.com/mgsisk/eslint-config/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/mgsisk/eslint-config/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/mgsisk/eslint-config/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/mgsisk/postcss-modular-rhythm/tree/v0.1.0
