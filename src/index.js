@@ -54,7 +54,7 @@ function lineHeightScale(lineHeight, power, ratio, bases) {
 /**
  * Convert custom vertical rhythm units into valid CSS values.
  */
-module.exports = postcss.plugin('.postcss.plugin.js', (options)=> {
+module.exports = postcss.plugin('postcss-modular-rhythm', (options)=> {
   const defaults = {
     fontSize: 1,
     fontUnit: 'em',
