@@ -11,22 +11,19 @@
     "lint.yml": "yamllint '**/*.yml' '**/.*.yml'",
     "preversion": "npm test",
     "postversion": "git push --follow-tags",
-    "test": "npm run lint.js && tap tests --coverage-report=lcovonly"
+    "test": "npm run lint.js; tap tests --coverage-report=lcovonly"
   },
   "repository": "github:mgsisk/postcss-modular-rhythm",
   "keywords": [
     "css",
+    "modular-scale",
     "postcss",
     "postcss-plugin",
-    "modular-scale",
     "vertical-rhythm"
   ],
   "author": "mgsisk <me@mgsisk.com> (https://mgsisk.com)",
   "license": "ISC",
-  "bugs": {
-    "email": "help@mgsisk.com",
-    "url": "https://github.com/mgsisk/postcss-modular-rhythm/issues"
-  },
+  "bugs": "https://github.com/mgsisk/postcss-modular-rhythm/issues",
   "homepage": "https://github.com/mgsisk/postcss-modular-rhythm",
   "dependencies": {
     "postcss": "^7.0.6"
