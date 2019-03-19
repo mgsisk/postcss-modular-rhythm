@@ -1,7 +1,3 @@
-/**
- * Handle custom vertical rhythm units
- */
-
 const postcss = require('postcss')
 
 /**
@@ -52,7 +48,7 @@ function lineHeightScale(lineHeight, power, ratio, bases) {
 }
 
 /**
- * Convert custom vertical rhythm units into valid CSS values.
+ * Convert custom modular scale and vertical rhythm units into valid CSS values.
  */
 module.exports = postcss.plugin('@mgsisk/postcss-modular-rhythm', (options)=> {
   const defaults = {
