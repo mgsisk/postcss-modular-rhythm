@@ -11,7 +11,7 @@
     "lint.yml": "yamllint '**/*.yml' '**/.*.yml'",
     "preversion": "npm test",
     "postversion": "git push --follow-tags",
-    "test": "npm run lint.js; tap tests --coverage-report=lcovonly"
+    "test": "tap tests --coverage-report=lcovonly"
   },
   "repository": "github:mgsisk/postcss-modular-rhythm",
   "keywords": [
@@ -26,15 +26,15 @@
   "bugs": "https://github.com/mgsisk/postcss-modular-rhythm/issues",
   "homepage": "https://github.com/mgsisk/postcss-modular-rhythm",
   "dependencies": {
-    "postcss": "^7.0.14"
+    "postcss": "^7.0.17"
   },
   "devDependencies": {
-    "@mgsisk/eslint-config": "^0.6.2",
-    "@mgsisk/remark-lint-config": "^0.1.2",
-    "eslint": "^5.15.3",
+    "@mgsisk/eslint-config": "^0.8.1",
+    "@mgsisk/remark-lint-config": "^0.2.0",
+    "eslint": "^6.0.1",
     "jsonlint": "^1.6.3",
     "remark-cli": "^6.0.1",
-    "tap": "^12.6.0",
+    "tap": "^14.4.0",
     "yaml-lint": "^1.2.4"
   }
 }
