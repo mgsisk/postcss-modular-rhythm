@@ -1,5 +1,4 @@
 version: "2"
-
 checks:
   argument-count:
     config:
@@ -9,20 +8,19 @@ checks:
       threshold: 8
   file-lines:
     config:
-      threshold: 1024
+      threshold: 512
   method-complexity:
     config:
-      threshold: 256
+      threshold: 16
   method-count:
     config:
       threshold: 32
   method-lines:
     config:
-      threshold: 128
+      threshold: 64
   return-statements:
     config:
       threshold: 8
-
 plugins:
   duplication:
     enabled: true
@@ -31,9 +29,15 @@ plugins:
         - javascript:
   editorconfig:
     enabled: true
+  eslint:
+    enabled: true
   fixme:
     enabled: true
   git-legal:
     enabled: true
   nodesecurity:
     enabled: true
+exclude_patterns:
+  - ".dependabot/"
+  - ".git/"
+  - ".github/"
