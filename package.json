@@ -6,7 +6,6 @@
   "scripts": {
     "clean": "find . -name '*.DS_Store' -type f -delete",
     "lint.js": "eslint '**/*.js' '**/.*.js'",
-    "lint.json": "find . \\( -name '*.json' -o -name '.*.json' \\) ! -path '*/node_modules/*' ! -path '*/vendor/*' ! -path '*/.nyc_output/*' | xargs -L1 jsonlint -q",
     "lint.md": "remark .",
     "lint.yml": "yamllint '**/*.yml' '**/.*.yml'",
     "preversion": "npm test",
@@ -32,7 +31,6 @@
     "@mgsisk/eslint-config": "^0.8.1",
     "@mgsisk/remark-lint-config": "^0.2.0",
     "eslint": "^6.0.1",
-    "jsonlint": "^1.6.3",
     "remark-cli": "^6.0.1",
     "tap": "^14.4.0",
     "yaml-lint": "^1.2.4"
