@@ -1,0 +1,4 @@
+100: true
+coverage-report: lcov
+no-browser: true
+reporter: spec
