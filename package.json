@@ -4,7 +4,6 @@
   "description": "PostCSS plugin that adds modular scale and vertical rhythm units to CSS.",
   "main": "src/index.js",
   "scripts": {
-    "clean": "find . -name '*.DS_Store' -type f -delete",
     "lint.js": "eslint '**/*.js' '**/.*.js'",
     "lint.md": "remark .",
     "lint.yml": "yamllint '**/*.yml' '**/.*.yml'",
