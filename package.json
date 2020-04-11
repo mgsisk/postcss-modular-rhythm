@@ -24,15 +24,22 @@
   "bugs": "https://github.com/mgsisk/postcss-modular-rhythm/issues",
   "homepage": "https://github.com/mgsisk/postcss-modular-rhythm",
   "files": ["src/"],
+  "directories": {
+    "doc": "docs",
+    "lib": "src",
+    "test": "test"
+  },
   "dependencies": {
-    "postcss": "^7.0.17"
+    "postcss": "^7.0.27"
   },
   "devDependencies": {
     "@mgsisk/eslint-config": "^0.8.1",
     "@mgsisk/remark-lint-config": "^0.2.0",
-    "eslint": "^6.0.1",
-    "remark-cli": "^6.0.1",
-    "tap": "^14.4.0",
+    "eslint": "^6.8.0",
+    "jsonlint": "^1.6.3",
+    "remark-cli": "^8.0.0",
+    "shellcheck": "^0.4.2",
+    "tap": "^14.10.7",
     "yaml-lint": "^1.2.4"
   }
 }
