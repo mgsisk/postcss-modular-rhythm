@@ -15,5 +15,5 @@ project. Before you submit your issue:
 - Make sure you have the right issue template
 - Review this project's documentation and other issues for existing answers or
   feedback
-- Check the SUPPORT file to ensure this is the best place to get an answer or
+- Check the SUPPORT file to make sure this is the best place to get an answer or
   receive feedback
