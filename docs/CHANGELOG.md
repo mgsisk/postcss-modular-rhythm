@@ -4,6 +4,10 @@ Documents notable project changes. Versions are [semantic][].
 
 ## [Unreleased][]
 
+- No unreleased changes.
+
+## [0.3.0][] - 2020-04-11
+
 ### Changed
 
 - Project structure
@@ -60,7 +64,8 @@ Documents notable project changes. Versions are [semantic][].
 - `msu` unit support
 - `vru` unit support
 
-[unreleased]: https://github.com/mgsisk/eslint-config/compare/v0.2.2...HEAD
+[unreleased]: https://github.com/mgsisk/eslint-config/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/mgsisk/eslint-config/compare/v0.2.2...v0.3.0
 [0.2.2]: https://github.com/mgsisk/eslint-config/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/mgsisk/eslint-config/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/mgsisk/eslint-config/compare/v0.1.2...v0.2.0
