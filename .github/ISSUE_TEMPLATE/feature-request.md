@@ -17,7 +17,6 @@ Provide a clear and concise description of any alternative solutions or features
 considered here.
 
 **Suggested Implementation**  
-
 Provide a clear and concise description of any suggested implementations here,
 or delete this section.
 
@@ -25,6 +24,6 @@ or delete this section.
 Provide any relevant context that might help here, including:
 
 - Code related to the feature
-- Environments that support the feature (e.g. browser, device, operating system)
+- Environments that support the feature (e.g. node version, postcss version)
 - Links to examples of the feature
 - Screenshots demonstrating the feature

@@ -41,3 +41,6 @@ exclude_patterns:
   - ".dependabot/"
   - ".git/"
   - ".github/"
+  - ".nyc_output/"
+  - "coverage/"
+  - "node_modules/"

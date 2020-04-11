@@ -1,63 +1,16 @@
+const modular = require('./modular.js')
+const normalize = require('./normalize.js')
 const postcss = require('postcss')
 
-/**
- * Calculate a modular scale value.
- *
- * @param {number} power The power of the modular scale value.
- * @param {number} ratio The modular scale ratio.
- * @param {Array} bases One or more modular scale bases.
- * @returns {number}
- */
-function modularScale(power, ratio, bases) {
-  const scale = []
-  let step = 0
-
-  while (Math.abs(step) <= Math.abs(power)) {
-    for (let i = 0; i < bases.length; i++) {
-      scale.push(bases[i] * Math.pow(ratio, step))
-    }
-
-    step += 1
-
-    if (power < 0) {
-      step -= 2
-    }
-  }
-
-  return Array.from(new Set(scale))[Math.abs(step) - 1] // eslint-disable-line no-undef
-}
-
-/**
- * Calculate a unitless line height for a given modular scale.
- *
- * @param {number} lineHeight The base, unitless line height.
- * @param {number} power The power of the modular scale value.
- * @param {number} ratio The modular scale ratio.
- * @param {Array} bases One or more modular scale bases.
- * @returns {number}
- */
-function lineHeightScale(lineHeight, power, ratio, bases) {
-  const baseHeight = lineHeight / modularScale(power, ratio, bases)
-  let realHeight = baseHeight
-
-  while (realHeight < 1) {
-    realHeight += baseHeight
-  }
-
-  return realHeight
-}
-
-/**
- * Convert custom modular scale and vertical rhythm units into valid CSS values.
- */
 module.exports = postcss.plugin('@mgsisk/postcss-modular-rhythm', (options)=> {
   const defaults = {
+    bases: [1],
     fontSize: 1,
     fontUnit: 'em',
     lineHeight: 1.5,
-    rhythmUnit: 'rem',
+    normal: {},
     ratio: 1.2,
-    bases: [1],
+    rhythmUnit: 'rem',
     round: 5,
   }
 
@@ -69,54 +22,43 @@ module.exports = postcss.plugin('@mgsisk/postcss-modular-rhythm', (options)=> {
         return
       }
 
-      if (decl.prop === '--font-size') {
-        options.fontSize = parseFloat(decl.value)
-        options.fontUnit = decl.value.replace(/(\d|\.|-)+/u, '')
-      } else if (decl.prop === '--line-height') {
-        options.lineHeight = parseFloat(decl.value)
-        options.rhythmUnit = decl.value.replace(/(\d|\.|-)+/u, '')
-      } else if (decl.prop === '--modular-scale') {
-        const [ratio, ...bases] = postcss.list.space(decl.value)
+      switch (decl.prop) {
+        case '--font-size':
+          options.fontSize = parseFloat(decl.value)
+          options.fontUnit = decl.value.replace(/[-\d.]+/u, '')
+          break
+        case '--line-height':
+          options.lineHeight = parseFloat(decl.value)
+          options.rhythmUnit = decl.value.replace(/[-\d.]+/u, '')
+          break
+        case '--modular-scale': {
+          const [ratio, ...bases] = postcss.list.space(decl.value)
 
-        options.ratio = parseFloat(ratio)
-        options.bases = Array.from(new Set(bases)).map(value=> parseFloat(value)) // eslint-disable-line no-undef
+          options.ratio = parseFloat(ratio)
+          options.bases = Array.from(new Set(bases)).map(value=> parseFloat(value)) // eslint-disable-line no-undef
 
-        if (!options.bases.length) {
-          options.bases.push(1)
-        }
+          if (!options.bases.length) {
+            options.bases.push(1)
+          }
+
+          break
+        } default: // Do nothing; this isn't a property the plugin handles.
       }
     })
 
-    root.replaceValues(
-      /(-?\d*\.?\d+)mfs\b/gu,
-      (value)=> {
-        const size = modularScale(parseFloat(value), options.ratio, options.bases) * options.fontSize
-
-        return parseFloat(size.toFixed(options.round)) + options.fontUnit
-      }
+    options.normal.bases = normalize.bases(options.ratio, options.bases)
+    options.normal.fontSize = normalize.fontSize(options.fontSize, options.fontUnit, options.bases[0])
+    options.normal.lineHeight = normalize.lineHeight(
+      options.lineHeight,
+      options.rhythmUnit,
+      options.bases[0],
+      options.normal.fontSize,
+      options.fontUnit,
     )
 
-    root.replaceValues(
-      /(-?\d*\.?\d+)mlh\b/gu,
-      (value)=> {
-        const height = lineHeightScale(options.lineHeight, parseFloat(value), options.ratio, options.bases)
-
-        return parseFloat(height.toFixed(options.round))
-      }
-    )
-
-    root.replaceValues(
-      /(-?\d*\.?\d+)msu\b/gu,
-      value=> parseFloat(modularScale(parseFloat(value), options.ratio, options.bases).toFixed(options.round))
-    )
-
-    root.replaceValues(
-      /(-?\d*\.?\d+)vru\b/gu,
-      (value)=> {
-        const rhythm = parseFloat(value) * options.lineHeight
-
-        return parseFloat(rhythm.toFixed(options.round)) + options.rhythmUnit
-      }
-    )
+    root.replaceValues(/(-?\d*\.?\d+)mfs\b/gu, value=> modular.fontSize(parseFloat(value), options))
+    root.replaceValues(/(-?\d*\.?\d+)mlh\b/gu, value=> modular.lineHeight(parseFloat(value), options))
+    root.replaceValues(/(-?\d*\.?\d+)msu\b/gu, value=> modular.scaleUnit(parseFloat(value), options))
+    root.replaceValues(/(-?\d*\.?\d+)vru\b/gu, value=> modular.rhythmUnit(parseFloat(value), options))
   }
 })
