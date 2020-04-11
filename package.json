@@ -1,6 +1,6 @@
 {
   "name": "@mgsisk/postcss-modular-rhythm",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "PostCSS plugin that adds modular scale and vertical rhythm units to CSS.",
   "main": "src/index.js",
   "scripts": {
@@ -26,7 +26,9 @@
   "license": "ISC",
   "bugs": "https://github.com/mgsisk/postcss-modular-rhythm/issues",
   "homepage": "https://github.com/mgsisk/postcss-modular-rhythm",
-  "files": ["src/"],
+  "files": [
+    "src/"
+  ],
   "directories": {
     "doc": "docs",
     "lib": "src",
