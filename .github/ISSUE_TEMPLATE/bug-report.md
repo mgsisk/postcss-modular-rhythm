@@ -23,7 +23,7 @@ this section.
 Provide any relevant context that might help here, including:
 
 - Code related to the bug
-- Environments that produce the bug (e.g. browser, device, operating system)
+- Environments that produce the bug (e.g. node version, postcss version)
 - Links to live examples of the bug
 - Project versions that include the bug
 - Screenshots demonstrating the bug
