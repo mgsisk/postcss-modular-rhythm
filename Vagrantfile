@@ -12,6 +12,6 @@ Vagrant.configure('2') do |config|
 
     test.vm.box = 'debian/contrib-buster64'
     test.vm.hostname = hostname
-		test.vm.provision :shell, path: 'vagrant.sh', args: [ENV['lc'], ENV['tz']]
+    test.vm.provision :shell, path: 'vagrant.sh', args: [ENV['lc'], ENV['tz']]
   end
 end

@@ -1,3 +1,5 @@
+'use strict'
+
 const modular = require('./modular.js')
 const normalize = require('./normalize.js')
 const postcss = require('postcss')
