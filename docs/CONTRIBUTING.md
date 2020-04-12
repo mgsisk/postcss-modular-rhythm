@@ -113,4 +113,4 @@ ongoing work on this and other projects, please use [Liberapay][].
 [support question template]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/docs/.github/ISSUE_TEMPLATE/support-question.md
 [support resources]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/docs/SUPPORT.md
 [vagrant]: https://www.vagrantup.com
-[virtualbox]: https://www.virtualbox.org/
+[virtualbox]: https://www.virtualbox.org
