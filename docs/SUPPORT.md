@@ -28,7 +28,7 @@ questions as they're able.
 [contact]: https://otechie.com/mgsisk
 [contributing guidelines]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/docs/CONTRIBUTING.md
 [emailing]: mailto:me@mgsisk.com
-[forum]: https://spectrum.chat/mgsisk/postcss-modular-rhythm
+[forum]: https://spectrum.chat/mgsisk/postcss-mod-rhythm
 [issues]: https://github.com/mgsisk/postcss-modular-rhythm/issues
 [otechie]: https://otechie.com
 [spectrum]: https://spectrum.chat
