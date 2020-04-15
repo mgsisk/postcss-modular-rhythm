@@ -38,9 +38,8 @@ plugins:
   nodesecurity:
     enabled: true
 exclude_patterns:
-  - ".dependabot/"
-  - ".git/"
-  - ".github/"
   - ".nyc_output/"
+  - ".vagrant/"
   - "coverage/"
   - "node_modules/"
+  - "test/"
