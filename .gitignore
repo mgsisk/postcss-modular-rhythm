@@ -1,3 +1,4 @@
+.bundle/
 .nyc_output/
 .vagrant/
 coverage/
