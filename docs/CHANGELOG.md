@@ -1,56 +1,61 @@
 # Changelog
 
-Documents notable project changes. Versions are [semantic][].
+Notable project changes. Versions are [semantic][].
 
 ## [Unreleased][]
 
-- No unreleased changes.
+No unreleased changes.
+
+## [0.4.0][] - 2020-09-22
+
+### Added
+- `lineMin` option
+- `vrl` unit
+- `xlh` unit
+
+### Changed
+- `mlh` calculations are now limited by the `lineMin` option, which defaults to
+  `ratio`
+- `postcss` to a peer dependency
+- `postcss` peer dependency to `>= 8`
 
 ## [0.3.0][] - 2020-04-11
 
 ### Changed
-
 - Project structure
 - `lineHeightScale` now factors in `fontSize` to generate more consistent `lhu`
   values
 
 ### Fixed
-
 - `modularScale` now calculates the correct scale when using more than one base
 
 ## [0.2.2][] - 2019-07-03
 
 ### Changed
-
 - Updated package dependencies
 
 ## [0.2.1][] - 2019-03-19
 
 ### Changed
-
 - Replaced `jsonlint-cli` with `jsonlint`
 
 ### Fixed
-
 - Inline documentation
 
 ## [0.2.0][] - 2018-12-10
 
 ### Fixed
-
 - Plugin name
 
 ## [0.1.2][] - 2018-12-09
 
 ### Changed
-
 - Replaced `js-yaml` with `yaml-lint`
 - Replaced `jsonlint` with `jsonlint-cli`
 
 ## [0.1.1][] - 2018-12-07
 
 ### Changed
-
 - Moved npm deployment to Travis configuration
 - Package script names
 - Replaced `markdownlint-cli` with `remark-cli`
@@ -58,11 +63,10 @@ Documents notable project changes. Versions are [semantic][].
 ## [0.1.0][] - 2018-12-06
 
 ### Added
-
-- `mfs` unit support
-- `mlh` unit support
-- `msu` unit support
-- `vru` unit support
+- `mfs` unit
+- `mlh` unit
+- `msu` unit
+- `vru` unit
 
 [unreleased]: https://github.com/mgsisk/eslint-config/compare/v0.3.0...HEAD
 [0.3.0]: https://github.com/mgsisk/eslint-config/compare/v0.2.2...v0.3.0
