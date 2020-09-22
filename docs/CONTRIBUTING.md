@@ -93,13 +93,13 @@ use [IssueHunt][]. If you'd like to fund this project's maintainer and their
 ongoing work on this and other projects, please use [Liberapay][].
 
 [a good commit message]: https://chris.beams.io/posts/git-commit
-[bug report template]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/docs/.github/ISSUE_TEMPLATE/bug-report.md
+[bug report template]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/.github/ISSUE_TEMPLATE/bug-report.md
 [changelog]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/docs/CHANGELOG.md
 [code of conduct]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/docs/CODE_OF_CONDUCT.md
 [contributors]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/docs/AUTHORS.md
 [create a pull request]: https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests
 [creating a branch]: https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-and-deleting-branches-within-your-repository
-[feature request template]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/docs/.github/ISSUE_TEMPLATE/feature-request.md
+[feature request template]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/.github/ISSUE_TEMPLATE/feature-request.md
 [forking this repository]: https://help.github.com/en/github/getting-started-with-github/fork-a-repo
 [funding]: https://liberapay.com/mgsisk
 [issuehunt]: https://issuehunt.io/r/mgsisk
@@ -107,10 +107,10 @@ ongoing work on this and other projects, please use [Liberapay][].
 [liberapay]: https://liberapay.com/mgsisk
 [node]: https://nodejs.org
 [npm-scripts]: https://docs.npmjs.com/misc/scripts
-[pull request template]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/docs/.github/PULL_REQUEST_TEMPLATE.md
+[pull request template]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/.github/PULL_REQUEST_TEMPLATE.md
 [pulls]: https://github.com/mgsisk/postcss-modular-rhythm/pulls
 [security policy]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/docs/SECURITY.md
-[support question template]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/docs/.github/ISSUE_TEMPLATE/support-question.md
+[support question template]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/.github/ISSUE_TEMPLATE/support-question.md
 [support resources]: https://github.com/mgsisk/postcss-modular-rhythm/blob/master/docs/SUPPORT.md
 [vagrant]: https://www.vagrantup.com
 [virtualbox]: https://www.virtualbox.org
