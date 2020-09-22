@@ -52,6 +52,7 @@ if ! dpkg -l | grep -q 'nginx'; then
   apt-get -qqy install \
     git                \
     nodejs             \
+    ruby-full          \
     vim                \
     >/dev/null 2>&1
 fi
@@ -77,6 +78,18 @@ if [ -e /vagrant/package.json ]; then
     # shellcheck disable=SC2016
     printf 'export PATH=/vagrant/node_modules/.bin:$PATH\n' >> /home/vagrant/.bash_aliases
     printf 'alias run="npm run -s"\n' >> /home/vagrant/.bash_aliases
+  fi
+fi
+
+if [ -e /vagrant/Gemfile ]; then
+  if ! gem list | grep -q 'bundler'; then
+    printf 'Installing Bundler'
+    gem install -N --conservative --minimal-deps --silent bundler
+  fi
+
+  if ! bundle check --gemfile /vagrant/Gemfile >/dev/null 2>&1; then
+    printf 'Installing Bundler packages'
+    bundle install --gemfile /vagrant/Gemfile --jobs 9 --quiet
   fi
 fi
 
