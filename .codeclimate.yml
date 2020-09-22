@@ -38,6 +38,7 @@ plugins:
   nodesecurity:
     enabled: true
 exclude_patterns:
+  - ".bundle/"
   - ".nyc_output/"
   - ".vagrant/"
   - "coverage/"
