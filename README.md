@@ -11,16 +11,19 @@ PostCSS plugin that adds modular scale and vertical rhythm units to CSS.
 @mgsisk/postcss-modular-rhythm is a [PostCSS][] plugin that adds modular scale
 and vertical rhythm units to CSS.
 
-- `msu` – Modular Scale Unit, converted to a unitless value using the scale
-  step, ratio, and bases.
+- `mfs` – Modular Font Size, converted to a scaled value appropriate for
+  `font-size`.
 - `mlh` – Modular Line Height, converted to a unitless value appropriate for
-  `line-height` that will maintain vertical rhythm using the base line height
-  and scale step, ratio, and bases.
-- `mfs` – Modular Font Size, converted to a scaled value appropriate for `font`
-  or `font-size` using the base font size and scale step, ratio, and bases.
+  `line-height` that will maintain vertical rhythm for an equal `mfs` value.
+- `msu` – Modular Scale Unit, converted to a unitless scaled value.
+- `vrl` – Vertical Rhythm Line, converted to a multiple of the base line height 
+  appropriate for `line-height` that will fit an equal `mfs` value.
 - `vru` – Vertical Rhythm Unit, converted to a multiple of the base line height,
   appropriate for use with a variety of sizing properties (`height`, `margin`,
   `padding`, etc.)
+- `xlh` - Line Height Multiplier, converted to a unitless value equal to the
+  multiples of the base line height required to comfortably fit an equal `mfs`
+  value.
 
 ## Installation
 
@@ -99,9 +102,9 @@ to the `fontSize` and `fontUnit` properties in the JavaScript API.
 
 #### `--line-height`
 
-Set the base line height and vertical rhythm unit for `mlh` and `vru` values;
-defaults to `1.5rem`. Mapped to the `lineHeight` and `rhythmUnit` properties in
-the JavaScript API.
+Set the base line height and vertical rhythm unit for `mlh`, `vrl`, and `vru`
+values; defaults to `1.5rem`. Mapped to the `lineHeight` and `rhythmUnit`
+properties in the JavaScript API.
 
 #### `--modular-scale`
 
@@ -109,8 +112,28 @@ Set the ratio and bases used to calculate `mfs`, `mlh`, and `msu` values;
 defaults to `1.2 1`. The first number sets the scale ratio; following numbers
 set optional bases. Use `msu` values to get the scale value for a given step in
 the defined scale. For example, on the default scale - which [looks something
-like this][] - `2msu` would produce a value of `1.44`. Mapped to the `ratio` and
-`bases` properties in the JavaScript API.
+like this][] - `2msu` would produce a value of `1.44`. Mapped to the `ratio`,
+`bases`, and `lineMin` properties in the JavaScript API.
+
+#### `lineMin`
+
+You can set a specific minimum line height in the JavaScript API using the
+`lineMin` option; defaults to `ratio`. This affects `mlh`, `vrl`, and `xlh`
+values, with a larger `lineMin` resulting in larger line-heights as you move up
+the scale. An example assuming the default options:
+
+| `xlh` | `lineMin: 1` | `lineMin: 1.2` (default) | `lineMin: 1.5` |
+| ----- | ------------ | ------------------------ | -------------- |
+| 0     | 1            | 1                        | 1              |
+| 1     | 1            | 1                        | 2              |
+| 2     | 1            | 2                        | 2              |
+| 3     | 2            | 2                        | 2              |
+| 4     | 2            | 2                        | 3              |
+| 5     | 2            | 2                        | 3              |
+| 6     | 2            | 3                        | 3              |
+| 7     | 3            | 3                        | 4              |
+| 8     | 3            | 4                        | 5              |
+| 9     | 4            | 5                        | 6              |
 
 #### `round`
 
@@ -123,17 +146,45 @@ the `round` option; defaults to `5`.
 module.exports = {
   plugins: [
     …
-    require('@mgsisk/postcss-modular-rhythm')({round: 2}),
+    require('@mgsisk/postcss-modular-rhythm')({
+      lineMin: 1,
+      round: 2,
+    }),
     …
   ]
 }
 ```
 
-### Vertical Rhythm
+### Line Height and Vertical Rhythm
 
-To maintain vertical rhythm, elements should have the same `mfs` and `mlh`
-values. For example, an `h2` with `font-size: 4mfs;` should have `line-height:
-4mlh;`.
+To maintain vertical rhythm, elements should have the same `mfs` and either
+`mlh` or `vrl` values (e.g. `font-size: 3mfs` should have `line-height: 3mlh`
+or `line-height: 3vrl`). `mlh` returns a unitless value, but this may cause
+inconsistent or imperfect rendering across browsers. If you need exact
+rendering or don't care about unitless line-heights, use `vrl`.
+
+Calculated `line-heights` get more complicated, and may require the `xlh`
+value. Given the following (using default options and assuming a viewport
+`320px` wide):
+
+```css
+body {
+  font-size: calc(0mfs + 1vw);
+  line-height: calc(0mlh * 1em + 2vw);
+}
+
+h1 {
+  font-size: 5mfs;
+  line-height: 5mlh;
+}
+```
+
+The calculated root line height will be `35.2px`, but `h1` will have a
+calculated line height of about `57px`. Changing the `h1` line height to
+`calc(5mlh * 1em + 2vw)` will help, but won't fully correct the issue because
+`5mlh` is a multiple of the base line height. This is where the `xlh` value
+comes in; changing the `h1` line height to `calc(5mlh * 1em + 2vw * 5xlh)` will
+get the correct line height.
 
 ## Contributing
 
