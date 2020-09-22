@@ -1,0 +1,7 @@
+{
+  "schema": "DEFAULT_SAFE_SCHEMA",
+  "ignore": [
+    "coverage/**",
+    "node_modules/**"
+  ]
+}
