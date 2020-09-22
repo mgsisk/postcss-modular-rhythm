@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  * Get a modular font size (mfs) value.
  *
@@ -14,21 +12,24 @@ function fontSize(value, options) {
 }
 
 /**
- * Get a modular line height (mlh) value.
+ * Get line height values.
  *
  * @param {number} value Modular line height value to replace.
  * @param {object} options Plugin options.
- * @returns {string}
+ * @returns {object}
  */
 function lineHeight(value, options) {
   const baseHeight = options.normal.lineHeight / scale(value, options.ratio, options.normal.bases)
   let height = baseHeight
 
-  while (height < 1) {
+  while (height < options.lineMin) {
     height += baseHeight
   }
 
-  return parseFloat(height.toFixed(options.round))
+  return {
+    height: parseFloat(height.toFixed(options.round)),
+    multiplier: parseInt(height / baseHeight),
+  }
 }
 
 /**
@@ -36,7 +37,7 @@ function lineHeight(value, options) {
  *
  * @param {number} value Modular size unit value to replace.
  * @param {object} options Plugin options.
- * @returns {string}
+ * @returns {number}
  */
 function scaleUnit(value, options) {
   return parseFloat(scale(value, options.ratio, options.normal.bases).toFixed(options.round))
