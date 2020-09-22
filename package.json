@@ -6,7 +6,7 @@
   "scripts": {
     "fix.js": "eslint --fix '**/*.js' '**/.*.js'",
     "lint.js": "eslint '**/*.js' '**/.*.js'",
-    "lint.json": "printf 'package-lock.json package.json' | xargs -n1 jsonlint -q",
+    "lint.json": "YAMLLINT_SCHEMA=JSON_SCHEMA yamllint '**/*.json'",
     "lint.md": "remark . .github/ --ignore-pattern LICENSE*",
     "lint.sh": "shellcheck *.sh",
     "lint.yml": "yamllint '**/*.yml' '**/.*.yml'",
@@ -43,7 +43,6 @@
     "@mgsisk/eslint-config": "^1.0.0",
     "@mgsisk/remark-lint-config": "^0.2.0",
     "eslint": "^6.8.0",
-    "jsonlint": "^1.6.3",
     "remark-cli": "^8.0.0",
     "shellcheck": "^0.4.2",
     "tap": "^14.10.7",
