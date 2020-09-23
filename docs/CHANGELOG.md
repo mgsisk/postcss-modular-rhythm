@@ -6,6 +6,11 @@ Notable project changes. Versions are [semantic][].
 
 No unreleased changes.
 
+## [0.4.1][] - 2020-09-22
+
+### Fixed
+- Deployment configuration
+
 ## [0.4.0][] - 2020-09-22
 
 ### Added
@@ -68,7 +73,8 @@ No unreleased changes.
 - `msu` unit
 - `vru` unit
 
-[unreleased]: https://github.com/mgsisk/eslint-config/compare/v0.4.0...HEAD
+[unreleased]: https://github.com/mgsisk/eslint-config/compare/v0.4.1...HEAD
+[0.4.1]: https://github.com/mgsisk/eslint-config/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/mgsisk/eslint-config/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/mgsisk/eslint-config/compare/v0.2.2...v0.3.0
 [0.2.2]: https://github.com/mgsisk/eslint-config/compare/v0.2.1...v0.2.2
