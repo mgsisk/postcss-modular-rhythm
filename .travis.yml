@@ -26,7 +26,7 @@ jobs:
           api_key:
             secure: dpD84LeDDcDGxj3TYE+sv+kv/uvD2GGKk/oYNr3h2E/BBWNXxxhPzK3zITS2joBc0sI+38RG6iTHcv7mhqTzJkGRNC8fWCfth4wU5Mmfh0FhU0pw77LfbMcBYS9VltYlTazDnOH09a5bNFzHFravUhbTjYpuP92cN+IYUzWHiZvsuQ8q0yDug0ZT54hRhxcyHCEtyivO0DsBmZW3dA+A967S967LduDUNoc21lXo7szLanjBYVVFNrcZSlpjw+3ijoHl/bi92lOUkllXMzrudc7j6WXVBaDwsgbvL2hBK1sTLKyVD+Ln6Yu8c/QCkwPDrAUm6fBcA6Hp4yrjR1RyIFr3njbXh+SeYjyArXO/TbYug8Bt9plwO6M3gv1BJoHF6ZsufuvQKryWjSCKwfjlU8pfwOscygpYkK/vDcUzUHijg/JV1Uk2frV8B1BXXa3h2khyheD9SVpYZRN3Qu83Y8E17TrfnH1fgef4Pm6UmV4LEsMDW1vQcPUOjS/uhaHWloRBbMy/OS92NxWob9UIjzMEzmmedAsaYA6rhK2Epj4px83Sm5gUj7M6uearGQQucV4+7v7m7xzoKD4h+xcp4VNFOukwhemFFARxDOB6wevhYbs3sp7e43WljTg9Qm5O/kb1eXoK6Y59jaazynmbAVhA86hrAlefX3CpRRqZjT4=
           on:
-            repo: mgsisk/postcss-modular-rhtyhm
+            repo: mgsisk/postcss-modular-rhythm
             tags: true
         - provider: npm
           registry: https://npm.pkg.github.com
@@ -36,5 +36,5 @@ jobs:
           edge:
             branch: master
           on:
-            repo: mgsisk/postcss-modular-rhtyhm
+            repo: mgsisk/postcss-modular-rhythm
             tags: true
