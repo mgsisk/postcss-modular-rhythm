@@ -19,7 +19,7 @@ after_script:
 jobs:
   include:
     - stage: deploy
-      script: skip
+      script: npm pack
       deploy:
         - provider: npm
           email: me@mgsisk.com
@@ -35,6 +35,15 @@ jobs:
             secure: A5uDvFNf1o2XEIhzdr3w0VWE9AfkT0YegpeU6wS8MyP29qFBHFxLmJ1Xq4efqxcpx7A5mjKS5capZ0atUaO6MNRRKoXEW6WlZ27WhOBGu5ZgJY2FgxfRZmjapnGCy8CK5aIuAlbhZofui6++zDD+2qYF1TmQUUN3SqgP9Hmy2znMhAUbtm0KsMfatNJCRUpkd0IwMYuIRRWVRm2pXW6wIC/BrRBDz11xxwrz238vynodYhPVYVbjVnuR9lM+RFabuNmoYF3mkXYoVJN+iB0fsi5nRVGn5Oy9dew2RFswftaJ7I8TwY5u356Xt8+54xzVqB2Yosv4SywVWxpztBo/AhkyT0d398wTkGAKmkld1c61avz4ObMwvS00h8NfTxDbWo2ZpcHcPAOsLoh+gYR4yMdAXLLDBDKyaQzJX6dZLXEB6qCkTRU/jEqynXNgOv0YY7XPLs/xWbvJQzB1bGoW1pQjLpXFAmVcvE9TIYfC8QsrswrGN7dwApSa74Y6JnUREZDe/lFhnEGiiIubx5RXi80PMiUiSrXxUCcWPwBB1YT/eaxN3gknKyRQ6g3jUw/J5hO0Di5cC4lSebzXb0bqvyC6L3zkiNzXhYVzml/lahrQd2zQq4iERq4zefl+YNJx/LPUYUiHKq5PxlePt7fgE8zRpyVGhjE67glR56xhrus=
           edge:
             branch: master
+          on:
+            repo: mgsisk/postcss-modular-rhythm
+            tags: true
+        - provider: releases
+          skip_cleanup: true
+          file_glob: true
+          file: mgsisk-postcss-modular-rhythm-*.tgz
+          api_key:
+            secure: A5uDvFNf1o2XEIhzdr3w0VWE9AfkT0YegpeU6wS8MyP29qFBHFxLmJ1Xq4efqxcpx7A5mjKS5capZ0atUaO6MNRRKoXEW6WlZ27WhOBGu5ZgJY2FgxfRZmjapnGCy8CK5aIuAlbhZofui6++zDD+2qYF1TmQUUN3SqgP9Hmy2znMhAUbtm0KsMfatNJCRUpkd0IwMYuIRRWVRm2pXW6wIC/BrRBDz11xxwrz238vynodYhPVYVbjVnuR9lM+RFabuNmoYF3mkXYoVJN+iB0fsi5nRVGn5Oy9dew2RFswftaJ7I8TwY5u356Xt8+54xzVqB2Yosv4SywVWxpztBo/AhkyT0d398wTkGAKmkld1c61avz4ObMwvS00h8NfTxDbWo2ZpcHcPAOsLoh+gYR4yMdAXLLDBDKyaQzJX6dZLXEB6qCkTRU/jEqynXNgOv0YY7XPLs/xWbvJQzB1bGoW1pQjLpXFAmVcvE9TIYfC8QsrswrGN7dwApSa74Y6JnUREZDe/lFhnEGiiIubx5RXi80PMiUiSrXxUCcWPwBB1YT/eaxN3gknKyRQ6g3jUw/J5hO0Di5cC4lSebzXb0bqvyC6L3zkiNzXhYVzml/lahrQd2zQq4iERq4zefl+YNJx/LPUYUiHKq5PxlePt7fgE8zRpyVGhjE67glR56xhrus=
           on:
             repo: mgsisk/postcss-modular-rhythm
             tags: true
