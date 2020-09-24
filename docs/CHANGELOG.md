@@ -17,6 +17,7 @@ No unreleased changes.
 - `lineMin` option
 - `vrl` unit
 - `xlh` unit
+- GithHub Packages deployment
 
 ### Changed
 - `mlh` calculations are now limited by the `lineMin` option, which defaults to
