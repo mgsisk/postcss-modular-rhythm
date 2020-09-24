@@ -5,8 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "fix.js": "eslint --fix '**/*.js' '**/.*.js'",
+    "fix.md": "remark . .github/ --ignore-pattern 'LICENSE*' -o",
+    "fix.sh": "shellcheck *.sh -f diff | git apply",
     "lint.js": "eslint '**/*.js' '**/.*.js'",
-    "lint.json": "YAMLLINT_SCHEMA=JSON_SCHEMA yamllint '**/*.json'",
+    "lint.json": "YAMLLINT_SCHEMA=JSON_SCHEMA yamllint '**/*.json' '**/.*.json'",
     "lint.md": "remark . .github/ --ignore-pattern LICENSE*",
     "lint.sh": "shellcheck *.sh",
     "lint.yml": "yamllint '**/*.yml' '**/.*.yml'",
@@ -26,7 +28,7 @@
   "author": "mgsisk <me@mgsisk.com> (https://mgsisk.com)",
   "license": "ISC",
   "bugs": "https://github.com/mgsisk/postcss-modular-rhythm/issues",
-  "homepage": "https://github.com/mgsisk/postcss-modular-rhythm",
+  "homepage": "https://github.com/mgsisk/postcss-modular-rhythm#readme",
   "funding": "https://github.com/mgsisk/postcss-modular-rhythm?sponsor=1",
   "files": [
     "src/"
