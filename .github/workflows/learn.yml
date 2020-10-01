@@ -3,10 +3,10 @@ on: [push]
 jobs:
 
   lint:
-    runs-on: ubunut-latest
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
       - run: npm install
       - run: npm run lint.js
 
@@ -16,15 +16,21 @@ jobs:
       matrix:
         node: ['latest', 'lts']
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+      - uses: codacy/codacy-coverage-reporter-action@master
+        if: ${{ matrix.node == 'latest' }}
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: ./coverage/lcov.info
       - run: npm install
       - run: npm test
+      -
 
   deploy:
-    runs-on: ubunut-latest
+    runs-on: ubuntu-latest
     needs: test
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
       - run: npm -v
