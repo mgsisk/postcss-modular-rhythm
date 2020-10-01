@@ -5,8 +5,8 @@ jobs:
   lint:
     runs-on: ubunut-latest
     steps:
-      - uses: actions/checkout
-      - uses: actions/setup-node
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
       - run: npm install
       - run: npm run lint.js
 
@@ -16,8 +16,8 @@ jobs:
       matrix:
         node: ['latest', 'lts']
     steps:
-      - uses: actions/checkout
-      - uses: actions/setup-node
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
       - run: npm install
       - run: npm test
 
@@ -25,4 +25,6 @@ jobs:
     runs-on: ubunut-latest
     needs: test
     steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
       - run: npm -v
