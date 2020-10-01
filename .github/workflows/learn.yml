@@ -24,6 +24,7 @@ jobs:
         if: ${{ matrix.node == 'latest' }}
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: coverage/lcov.info
 
   deploy:
     runs-on: ubuntu-latest
