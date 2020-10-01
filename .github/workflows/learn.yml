@@ -25,7 +25,6 @@ jobs:
           coverage-reports: ./coverage/lcov.info
       - run: npm install
       - run: npm test
-      -
 
   deploy:
     runs-on: ubuntu-latest
