@@ -18,13 +18,12 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
+      - run: npm install
+      - run: npm test
       - uses: codacy/codacy-coverage-reporter-action@master
         if: ${{ matrix.node == 'latest' }}
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: coverage/lcov.info
-      - run: npm install
-      - run: npm test
 
   deploy:
     runs-on: ubuntu-latest
