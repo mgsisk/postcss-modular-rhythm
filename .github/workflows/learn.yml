@@ -5,8 +5,8 @@ jobs:
   lint:
     runs-on: ubunut-latest
     steps:
-      - use: actions/checkout
-      - use: actions/setup-node
+      - uses: actions/checkout
+      - uses: actions/setup-node
       - run: npm install
       - run: npm run lint.js
 
