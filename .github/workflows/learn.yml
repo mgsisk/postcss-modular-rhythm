@@ -7,9 +7,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-      - run: |
-          npm install
-          npm run lint.js
+      - run: npm install
+      - run: npm run lint.js
 
   test:
     runs-on: ubuntu-latest
@@ -19,9 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-      - run: |
-          npm install
-          npm test
+      - run: npm install
+      - run: npm test
       - uses: codacy/codacy-coverage-reporter-action@master
         if: ${{ matrix.node == 'latest' }}
         with:
@@ -34,9 +32,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-      - run: |
-          npm install
-          npm publish
+      - run: npm install
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - uses: actions/setup-node@master
