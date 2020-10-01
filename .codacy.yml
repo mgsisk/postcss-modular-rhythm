@@ -1,0 +1,6 @@
+exclude_paths:
+  - .bundle/**
+  - .nyc_output/**
+  - .vagrant/**
+  - coverage/**
+  - node_modules/**
