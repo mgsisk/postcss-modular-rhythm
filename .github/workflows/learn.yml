@@ -1,14 +1,14 @@
 name: learn-github-actions
+
 on: [push]
+
 jobs:
 
-  lint:
+  analyze:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-      - run: npm install
-      - run: npm run lint.js
+      - uses: codacy/codacy-analysis-cli-action@master
 
   test:
     runs-on: ubuntu-latest
@@ -32,7 +32,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-      - run: npm install
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
