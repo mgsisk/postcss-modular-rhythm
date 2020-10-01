@@ -28,12 +28,34 @@ jobs:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           coverage-reports: coverage/lcov.info
 
-  deploy:
+  release:
     runs-on: ubuntu-latest
     needs: test
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
+      - run: npm install
+      - run: npm pack
+      - uses: actions/create-release@master
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+      - uses: actions/upload-release-asset@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./mgsisk-postcss-modular-rhythm-${{ github.ref }}.tgz
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+      - run: npm install
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
