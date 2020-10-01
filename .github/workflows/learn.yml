@@ -7,19 +7,21 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-      - run: npm install
-      - run: npm run lint.js
+      - run: |
+          npm install
+          npm run lint.js
 
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: ['latest', 'lts']
+        node: [latest, lts]
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-      - run: npm install
-      - run: npm test
+      - run: |
+          npm install
+          npm test
       - uses: codacy/codacy-coverage-reporter-action@master
         if: ${{ matrix.node == 'latest' }}
         with:
@@ -32,5 +34,14 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-      - run: node -v
-      - run: npm -v
+      - run: |
+          npm install
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - uses: actions/setup-node@master
+        with:
+          registry-url: https://npm.pkg.github.com
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
