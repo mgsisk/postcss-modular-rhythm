@@ -1,3 +1,8 @@
+> **:rotating_light: This plugin is deprecated.**
+>
+> Most of what this plugin does can now be replicated in CSS using custom
+> properties and calc(). See [this gist](https://gist.github.com/mgsisk/af002bc17e813851316943921f448792) for an example.
+
 # @mgsisk/postcss-modular-rhythm
 
 PostCSS plugin that adds modular scale and vertical rhythm units to CSS.
